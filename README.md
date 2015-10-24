@@ -1,2 +1,4 @@
-# tm-pomodoro-timer
+#Pomodoro Timer
 :alarm_clock: :clipboard: Javascript Pomodoro Timer - for tracking your pomodoro sessions!
+
+http://tylermoeller.github.io/pomodoro-timer/
