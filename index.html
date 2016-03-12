@@ -3,44 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="google" value="notranslate">
-    <title>CodePen - Pomodoro Clock</title>
+
+
+    <title>Pomodoro Clock</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:type" content="website">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
-<style>
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    
+    
+        <style>
+      @import url(https://fonts.googleapis.com/css?family=Varela+Round);
 @import url(https://fonts.googleapis.com/css?family=Nova+Square);
-
-#home {
-  margin-top: 1em;
-  min-width: 320px;
-  max-width: 520px;
-  background-color: #222222;
-}
 
 html {
   position: relative;
   min-height: 100%;
-  background-color: #222222;
 }
 
 body {
-/* Disable text selection so buttons aren't highlighted when rapidly clicked */
-  
+  /* Disable text selection so buttons aren't highlighted when rapidly clicked */
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   user-select: none;
   background-color: #222222;
-  margin-bottom: 60px;
+  margin-bottom: 120px;
   /* margin bottom by footer height */
+}
+
+.home-content {
+  margin-top: 1em;
+  min-width: 320px;
+  max-width: 520px;
 }
 
 p {
@@ -115,38 +113,99 @@ p {
   z-index: 99;
 }
 
+/* footer formatting */
 .footer {
+  font-face: arial;
+  background-color: #222222;
+  font-size: 12px;
   position: absolute;
   border-top: 1px solid black;
   bottom: 0;
   width: 100%;
-  background-color: #222222;
-  height: 60px;
-  /* Set the fixed height of the footer here */
+  min-width: 320px;
+  padding: 1em 1em 0 1em;
 }
 
-.footer p {
-  font-family: sans-serif;
-  font-size: 12px;
-  font-weight: 600;
-  color: #9d9d9d;
-  text-align: left;
-  margin-left: 1em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+.footer-logos {
+  margin-top: -1em;
+  font-size: 14px;
 }
-</style>
-</head>
-<body>
-<!--
+
+.footer-logos a {
+  text-decoration: none;
+}
+
+.footer-logos i {
+  text-align: center;
+  color: #777777;
+  margin: 0 0 1em 1em;
+  padding-top: .25em;
+  border: 1px solid rgba(100, 100, 100, .3);
+  border-radius: 25%;
+  vertical-align: -1.5em;
+}
+
+.footer-logos .genericon {
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.footer-logos .fa {
+  width: 1.75em;
+  height: 1.75em;  
+}
+
+.footer .container-fluid {
+  max-width: 480px;
+}
+    </style>
+
+    
+    
+    
+  </head>
+
+  <body>
+
+    <!--
   ****       ***         ***       ***         ***        **** 
-  *  Copyright (C) 2015 Tyler Moeller. All rights reserved.  *
+  *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
   *  All trademarks, product names, and logos on this site   * 
   *  are the property of their respective owners.            *
   ****       ***         ***       ***         ***        ****
--->
 
-<div id="home" class="container text-center home-content">
+Assignment Details:
+  - Developed for the freeCodeCamp zipline project: Zipline: Build a Pomodoro Clock
+  - Details: http://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock
+ 
+Requirements for this assignment:
+  - Without looking at the code, emulate functionality of this pen: http://codepen.io/GeoffStorbeck/full/RPbGxZ/
+  - Users must be able to: 
+      - Start a 25min timer that will go off when the time has elapsed.
+      - Bonus: Reset the clock
+      - Bonus: Customize the length of the timer
+
+Assignment Completed. v1.0 10/01/2015:
+  - Responsive deisgn using JavaScript, jQuery, HTML5, and Bootstrap + FontAwesome CSS libraries.
+  - Users can access the following features:
+      - Continuously running timer set to 25 minutes followed by a 5-minute break by default. 
+      - Adjust the timer from 1-120 minutes and the break timer from 0-120 minutes.
+      - Play/Pause toggle button to start and pause the timer.
+      - Stop/Reset the timer back to the current Task Time setting (25 minutes by default).
+      - Option to receive a desktop notification every time the timer reaches 0.
+      - Review the number of Pomodoro Sessions completed (1 session = Timer + Break Timer completed)
+      - Test Mode to validate the design on codepen, changes 1 second to 100ms.
+  - Hours, minutes, and seconds stored in appropriate time formats based on values as: H:MM:SS, MM:SS, M:SS, SS, and S.
+  - Desktop notification settings only presented to browsers that support it.
+
+To Do: 
+  - Code review
+  - More accurate + better performance if we go off of current time rather than using setInterval.
+  - Better UI Design for mobile - difficult to adjust task time/break time.
+  - Long break setting after four pomodoros complete.
+ -->
+
+<div class="container text-center home-content">
   <div class="row">
     <h2 class="intro-title">Pomodoro Timer</h2>
   </div>
@@ -231,15 +290,25 @@ p {
     </div>
   </div>
 </div>
-<div id="footer" class="footer">
-  <div class="container-fluid">
-    <p>Copyright &copy; 2015, Tyler Moeller. All rights reserved.</p>
+<footer class="footer">
+  <div class="container-fluid text-center">
+    <div class="footer-text text-muted row">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock">Build a Pomodoro Clock</a></div>
+    <div class="footer-logos row">
+      <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+      <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="http://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+      <a href="http://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+      <a href="https://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+    </div>
   </div>
-</div>
+</footer>
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
     
-<script>
-var d = document;
+        <script>
+      var d = document;
 
 $(d).ready(function() {
   //defaults - for testing purposes and initial display
@@ -390,10 +459,10 @@ function stringToSeconds(time) {
 
 //converts seconds from stringToSeconds() back to a time-formatted string.
 function showTime(seconds, id) {
-  var display_hours = Math.floor(seconds / 3600),
-      display_minutes = Math.floor((seconds - (display_hours * 3600)) / 60),
-      display_seconds = seconds - (display_hours * 3600) - (display_minutes * 60),
-      time = display_hours + ":" + display_minutes + ":" + display_seconds;
+  var display_hours = Math.floor(seconds / 3600);
+  var display_minutes = Math.floor((seconds - (display_hours * 3600)) / 60);
+  var display_seconds = seconds - (display_hours * 3600) - (display_minutes * 60);
+  var time = display_hours + ":" + display_minutes + ":" + display_seconds;
 
   if (id == "clock-time") {
     //main clock shows H:MM:SS, MM:SS, M:SS, SS, or S
@@ -462,7 +531,7 @@ function notify(message) {
     return;
   }
   var notification = new Notification('Pomodoro Timer', {
-    icon: 'http://i.imgur.com/1j1SXzk.jpg',
+    icon: 'https://farm2.staticflickr.com/1463/25084523152_7b93879cce_o.jpg',
     body: message
   });
 }
@@ -548,5 +617,10 @@ function timerReset() {
 }
       //@ sourceURL=pen.js
     </script>
+
+    
+    
+    
   </body>
 </html>
+ 
