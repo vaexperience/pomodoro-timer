@@ -12,7 +12,7 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nova+Square">
-</head>
+  </head>
 <body>
 <!--
   ****       ***         ***       ***         ***        ****
@@ -22,97 +22,126 @@
   ****       ***         ***       ***         ***        ****
 -->
 
-<div id="home" class="container text-center home-content">
-  <div class="row">
-    <h2 class="intro-title">Pomodoro Timer</h2>
-  </div>
-  <div class="row" style="height: 1em">
-    <div id="show-progress" class="progress center-block" style="visibility: hidden">
-      <div id="progress-bar" class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="container text-center timer">
+    <div class="row">
+      <h2 class="title">Pomodoro Timer</h2>
     </div>
-  </div>
-  <div id="clock-time" class="row clock-time"></div>
-  <div class="row play-reset-row">
-    <span class="fa-stack fa-md icon">
-      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-      <i id="play-pause-button" onclick="timerControl()" class="fa fa-play fa-stack-1x"></i>
-    </span>
-    <span class="fa-stack fa-md icon">
-      <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-      <i id="reset-clock-button" onclick="timerReset()" class="fa fa-refresh fa-stack-1x"></i>
-    </span>
-  </div>
-  <div id="sessionCount" class="row"><span style="color:red">&#x1f345</span> 0</div>
-  <div class="row time-adjustment-row">
-    <div class="col-xs-4 col-xs-offset-2 task-time-col" style="min-width: 100px">
-      <p id="task-time" class="task-time-display"></p>
-      <div class="row">
-        <p class="task-time-text">Task Time</p>
+    <div class="row" style="height: 1em">
+      <div id="showProgress" class="progress center-block" style="visibility: hidden">
+        <div id="progressBar"
+             class="progress-bar progress-bar-info progress-bar-striped active"
+             role="progressbar"
+             aria-valuenow="0"
+             aria-valuemin="0"
+             aria-valuemax="100">
+        </div>
+      </div>
+    </div>
+    <div id="clockTime" class="row clock-time"></div>
+    <div class="row play-reset-row">
+      <span class="fa-stack fa-md icon">
+        <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+        <i id="playPauseButton" class="fa fa-play fa-stack-1x"></i>
+      </span>
+      <span class="fa-stack fa-md icon">
+        <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+        <i id="resetClockButton" class="fa fa-refresh fa-stack-1x"></i>
+      </span>
+    </div>
+    <div id="sessionCount" class="row"><span style="color:red">&#x1f345;</span> 0</div>
+    <div class="row time-adjustment-row">
+      <div class="col-xs-4 col-xs-offset-2 task-time-col" style="min-width: 100px">
+        <p id="taskTime" class="task-time-display"></p>
+        <div class="row">
+          <p class="task-time-text">Task Time</p>
+          <div class="row">
+            <span class="fa-stack fa-md icon">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i id="taskTimeUpButton" class="fa fa-plus fa-stack-1x"></i>
+            </span>
+            <span class="fa-stack fa-md icon">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i id="taskTimeResetButton" class="fa fa-refresh fa-stack-1x"></i>
+             </span>
+            <span class="fa-stack fa-md icon">
+              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+              <i id="taskTimeDownButton" class="fa fa-minus fa-stack-1x"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4 break-time-col" style="min-width: 100px">
+        <p id="breakTime" class="break-time-display"></p>
+        <div class="row">
+          <p class="break-time-text">Break Time</p>
+        </div>
         <div class="row">
           <span class="fa-stack fa-md icon">
             <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-            <i id="task-time-up-button" class="fa fa-plus fa-stack-1x" onclick="taskTimeUp()"></i>
+            <i id="breakTimeUpButton" class="fa fa-plus fa-stack-1x"></i>
           </span>
           <span class="fa-stack fa-md icon">
-              <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-              <i id="task-time-reset-button" class="fa fa-refresh fa-stack-1x" onclick="taskTimeReset()"></i>
-           </span>
+            <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+            <i id="breakTimeResetButton" class="fa fa-refresh fa-stack-1x"></i>
+          </span>
           <span class="fa-stack fa-md icon">
             <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-            <i id="task-time-down-buton" class="fa fa-minus fa-stack-1x" onclick="taskTimeDown()"></i>
+            <i id="breakTimeDownButton" class="fa fa-minus fa-stack-1x"></i>
           </span>
         </div>
       </div>
     </div>
-    <div class="col-xs-4 break-time-col" style="min-width: 100px">
-      <p id="break-time" class="break-time-display"></p>
-      <div class="row">
-        <p class="break-time-text">Break Time</p>
-      </div>
-      <div class="row">
-        <span class="fa-stack fa-md icon">
-            <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-            <i id="break-time-up-button" class="fa fa-plus fa-stack-1x" onclick="breakTimeUp()"></i>
-          </span>
-        <span class="fa-stack fa-md icon">
-            <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-            <i id="break-time-reset-button" class="fa fa-refresh fa-stack-1x" onclick="breakTimeReset()"></i>
-          </span>
-        <span class="fa-stack fa-md icon">
-            <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
-            <i id="break-time-down-button" class="fa fa-minus fa-stack-1x" onclick="breakTimeDown()"></i>
-          </span>
+    <div class="row settings">
+      <div class="col-xs-10 col-xs-offset-1">
+        <p>Settings:</p>
       </div>
     </div>
-  </div>
-  <div class="row settings">
-    <div class="col-xs-10 col-xs-offset-1">
-      <p>Settings:</p>
+    <div class="switch checkbox row">
+      <div class="col-xs-9 col-xs-offset-2">
+        <p>
+          <label id="continuousModeLabel"
+                 class="continuous-mode-label"
+                 title="Don't stop the timer when it reaches 0. Proceed to the next timer."
+                 data-toggle="tooltip"
+                 data-placement="auto left"
+                 data-trigger="hover">
+            <input id="perpetual" type="checkbox">Perpetual Pomodoro</label>
+        </p>
+        <p>
+          <label id="notificationsLabel"
+                 class="notifications-label"
+                 title="Not supported in Internet Explorer, Edge, or Mobile browsers yet."
+                 data-toggle="tooltip"
+                 data-placement="auto left"
+                 data-trigger="hover">
+           <input id="notify" type="checkbox">Desktop notification when timer completes</label>
+        </p>
+        <p>
+          <label id="testModeLabel"
+                 class="test-mode-label"
+                 title="1 second = 100 milliseconds"
+                 data-toggle="tooltip"
+                 data-placement="auto left"
+                 data-trigger="hover">
+            <input id="testMode" type="checkbox">Test Mode</label>
+        </p>
+      </div>
     </div>
   </div>
-  <div class="switch checkbox row">
-    <div class="col-xs-9 col-xs-offset-2">
-      <p>
-        <label id="continuous-mode-label" class="continuous-mode-label">
-          <input id="perpetual" type="checkbox">Perpetual Pomodoro</label>
-      </p>
-      <p>
-        <label id="notifications-label" class="notifications-label">
-          <input id="notify" type="checkbox">Desktop notification when timer completes</label>
-      </p>
-      <p>
-        <label id="test-mode-label" class="test-mode-label">
-          <input id="testMode" type="checkbox">Test Mode</label>
-      </p>
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="footer-text text-muted">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank">Build a Pomodoro Clock</a></p>
+      <div class="footer-logos row">
+        <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="http://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+        <a href="http://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+        <a href="https://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+      </div>
     </div>
-  </div>
-</div>
-<div id="footer" class="footer">
-  <div class="container-fluid">
-    <p>Copyright &copy; 2015, Tyler Moeller. All rights reserved.</p>
-  </div>
-</div>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </footer>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>

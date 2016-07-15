@@ -1,35 +1,33 @@
-#home {
-  margin-top: 1em;
-  min-width: 320px;
-  max-width: 520px;
-  background-color: #222222;
-}
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+@import url(https://fonts.googleapis.com/css?family=Nova+Square);
 
 html {
   position: relative;
   min-height: 100%;
-  background-color: #222222;
 }
 
 body {
-/* Disable text selection so buttons aren't highlighted when rapidly clicked */
-
+  /* Disable text selection so buttons aren't highlighted when rapidly clicked */
   -webkit-user-select: none;
   -moz-user-select: -moz-none;
   -ms-user-select: none;
   user-select: none;
   background-color: #222222;
-  margin-bottom: 60px;
-  /* margin bottom by footer height */
+  margin-bottom: 120px;
 }
 
-p {
+.container {
+  min-width: 320px;
+  max-width: 520px;
+}
+
+.timer p {
   color: white;
   margin: 0;
   font-family: 'Varela Round', sans-serif;
 }
 
-.intro-title {
+.title {
   font-size: 3.5em;
   color: white;
   font-family: 'Varela Round', sans-serif;
@@ -88,30 +86,37 @@ p {
 }
 
 .icon:active {
-  transition: .1s;
-  transform: scale(1.1);
-  opacity: 1;
-  position: relative;
-  z-index: 99;
+  transform: scale(0.9);
 }
 
+/* footer formatting */
 .footer {
+  background-color: #222222;
   position: absolute;
   border-top: 1px solid black;
   bottom: 0;
   width: 100%;
-  background-color: #222222;
-  height: 60px;
-  /* Set the fixed height of the footer here */
 }
 
-.footer p {
-  font-family: sans-serif;
+.footer-text {
   font-size: 12px;
-  font-weight: 600;
-  color: #9d9d9d;
-  text-align: left;
-  margin-left: 1em;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 1em;
+}
+
+.footer-logos {
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.footer-logos a {
+  text-decoration: none;
+}
+
+.footer-logos i {
+  color: #777777;
+  border: 1px solid rgba(100, 100, 100, .3);
+  border-radius: 25%;
+  vertical-align: text-bottom;
+  padding: .25em;
+  margin-right: .5em;
 }
