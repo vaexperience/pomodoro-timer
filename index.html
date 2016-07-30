@@ -15,13 +15,42 @@
     <link rel="stylesheet" href="pomodoro.css">
   </head>
 <body>
-<!--
-  ****       ***         ***       ***         ***        ****
-  *  Copyright (C) 2015 Tyler Moeller. All rights reserved.  *
-  *  All trademarks, product names, and logos on this site   *
-  *  are the property of their respective owners.            *
-  ****       ***         ***       ***         ***        ****
--->
+  <!--
+    ****       ***         ***       ***         ***        ****
+    *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+    *  All trademarks, product names, and logos on this site   *
+    *  are the property of their respective owners.            *
+    ****       ***         ***       ***         ***        ****
+
+  Assignment Details:
+    - Developed for the freeCodeCamp zipline project: Zipline: Build a Pomodoro Clock
+    - Details: http://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock
+
+  Requirements for this assignment:
+    - Without looking at the code, emulate functionality of this pen: http://codepen.io/GeoffStorbeck/full/RPbGxZ/
+    - Users must be able to:
+        - Start a 25min timer that will go off when the time has elapsed.
+        - Bonus: Reset the clock
+        - Bonus: Customize the length of the timer
+
+  Assignment Completed. v1.0 10/01/2015:
+    - Responsive deisgn using JavaScript, jQuery, HTML5, and Bootstrap + FontAwesome CSS libraries.
+    - Users can access the following features:
+        - Continuously running timer set to 25 minutes followed by a 5-minute break by default.
+        - Adjust the timer from 1-120 minutes and the break timer from 0-120 minutes.
+        - Play/Pause toggle button to start and pause the timer.
+        - Stop/Reset the timer back to the current Task Time setting (25 minutes by default).
+        - Option to receive a desktop notification every time the timer reaches 0.
+        - Review the number of Pomodoro Sessions completed (1 session = Timer + Break Timer completed)
+        - Test Mode to validate the design on codepen, changes 1 second to 100ms.
+    - Hours, minutes, and seconds stored in appropriate time formats based on values as: H:MM:SS, MM:SS, M:SS, SS, and S.
+    - Desktop notification settings only presented to browsers that support it.
+
+  To Do:
+    - More accurate + better performance if we go off of current time rather than using setInterval.
+    - Better UI Design for mobile - difficult to adjust task time/break time.
+    - Long break setting after four pomodoros complete.
+   -->
 
   <div class="container text-center timer">
     <div class="row">
@@ -131,13 +160,13 @@
   </div>
   <footer class="footer">
     <div class="container text-center">
-      <p class="footer-text text-muted">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="https://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank">Build a Pomodoro Clock</a></p>
+      <p class="footer-text text-muted">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://freecodecamp.com/challenges/zipline-build-a-pomodoro-clock" target="_blank">Build a Pomodoro Clock</a></p>
       <div class="footer-logos row">
         <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
         <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
         <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
-        <a href="https://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
-        <a href="https://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+        <a href="http://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+        <a href="http://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
         <a href="https://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
       </div>
     </div>

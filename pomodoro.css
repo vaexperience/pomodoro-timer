@@ -1,6 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Varela+Round);
-@import url(https://fonts.googleapis.com/css?family=Nova+Square);
-
 html {
   position: relative;
   min-height: 100%;
@@ -19,6 +16,12 @@ body {
 .container {
   min-width: 320px;
   max-width: 520px;
+}
+
+@media (min-width:768px) {
+  .timer {
+    margin-top: 10%;
+  }
 }
 
 .timer p {
